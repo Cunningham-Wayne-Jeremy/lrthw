@@ -31,8 +31,36 @@ This is probably not important but in case a redundancy like this may come in
 handy I will note it. You can put a string in a string using the #{} format
 #{'somestring'}
 ----------------------------------------------------------------------------------------------------------------------------------------
+Excercise 8 confused me so I decided to do some research on it. Essentially the
+% is used for formatting. This is a better link to how to use it properly:
+https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation
+
+Note that the %() sign by itself is used to not have to worry about escaping
+single and double qoutes or use them at all. The parenthesis's can be exchanged
+to be any alphanumeric character. But the character chosen would then need to be
+escaped. Unless its a parenthesis, square bracket or curly braces...
+For example %{}
+
+puts %{78% of statistics are "made up" on the spot.normal non escaped braces {}}
 So the % character can make it easier to use the same formatting for multiple
 items apparently
+
+Thats not all % can do however, There are modifiers that you can place after the
+percent sign that allow you to do formatting. Here is a small list but see the
+link for more examples:
+
+%q[ ]	Non-interpolated String (except for \\, \[, and \])
+%Q[ ]	Interpolated String (default) This one is used for substitution
+%r[ ]	Interpolated Regexp (flags can appear after the closing delimiter)
+%i[ ]	Non-interpolated Array of symbols, separated by whitespace (after Ruby 2.0)
+%I[ ]	Interpolated Array of symbols, separated by whitespace (after Ruby 2.0)
+%w[ ]	Non-interpolated Array of words, separated by whitespace
+%W[ ]	Interpolated Array of words, separated by whitespace
+%x[ ]	Interpolated shell command
+%s[ ]	Non-interpolated symbol
+
+A side note but you can use any of these as a multiline string!
+OLD
 see ex8 for more deets. I dont understand ex 8 enough to be honest so here is
 a link explaining more about it but it still went over my head:
 http://teohm.com/blog/start-using-ruby-percent-notation/
@@ -68,7 +96,7 @@ I'll do a list:
 	* Grass
 So Fat cat worked but the others didnt...Without looking at the text i found the
 problem:
-BACKSLASH NOT FORWARD SLASH SINNER!
+I was using a forward slash
 ----------------------------------------------------------------------------------------------------------------------------------------
 LIST OF ESCAPE SEQUENCES!!!!!!
 
@@ -86,9 +114,7 @@ LIST OF ESCAPE SEQUENCES!!!!!!
 \ooo Character with octal value ooo
 \xhh Character with hex value hh
 ----------------------------------------------------------------------------------------------------------------------------------------
-SOOO escape sequences do not work in irb JUST FYI
-----------------------------------------------------------------------------------------------------------------------------------------
-Strings surrounded by single qoutes do not support #{} syntax.
+Strings surrounded by single quotes do not support substitution #{} syntax.
 ----------------------------------------------------------------------------------------------------------------------------------------
 gets.chomp will ask input from the user look at what else you can do with get
 and why is it called chomp
@@ -109,7 +135,7 @@ https://en.wikibooks.org/wiki/Ruby_Programming/Strings
 single qoutes versus double???
 Well single only allows you 2 escape sequences! \' and \\
 AND as mentioned previously single quotes dont support #{} Syntax
-THAT WIKI ABOVE IS GOLD use as a reference as you continue whooping ass!!
+THAT WIKI ABOVE IS GOLD use as a reference as you continue
 ----------------------------------------------------------------------------------------------------------------------------------------
 So lesson 11 shows a built in function gets which accepts user input and can be
 used with other built in functions namely chomp so gets.chomp
@@ -142,10 +168,10 @@ numerical value
 Similarly there is to_s which converts to a string.
 ----------------------------------------------------------------------------------------------------------------------------------------
 EXERCISE 12 LOGICAL ERROR:
-I forgot to do a echo out a phrase to let the user now that the script is
-waiting on user input. so blank prompt was shown and it looked like it crashed
-but it didnt it was just waiting.
-c
+I forgot to ask the user to enter a number to let the user now that the script
+is waiting on user input. so blank prompt was shown and it looked like it
+crashed but it didnt it was just waiting for input.
+
 EXCERCISE 12 ERROR 1:
 ex12.rb:19: syntax error, unexpected tIDENTIFIER, expecting end-of-input
 10percent= tof * .10
@@ -186,3 +212,16 @@ following code to assign 3 variables to one Argument
 PEMDAS! So I thought it was in order but ITS NOT its actually: PE(M&D)(A&S) .
 SO parenthesis, Exponents , multiplicateion and DIVISION at the same
 time then ADD and subtract at the same time lol didnt know this and
+----------------------------------------------------------------------------------------------------------------------------------------
+Ruby has a lot of similarities with python, variables are the same, booleans too
+just true and false. You can multiply strings like python:
+puts "." * 10
+----------------------------------------------------------------------------------------------------------------------------------------
+ARGV for ruby can be used similarly to python in that you can do:
+var1, var2, var3 = ARGV
+You can however also do:
+variable_name = ARGV.first # This will capture the first user input given to the
+script.
+----------------------------------------------------------------------------------------------------------------------------------------
+In Ruby you can open files just like python. open(filename)
+To read a file you just assign that open(filename) to a var and then do var.read

@@ -1,7 +1,7 @@
 puts "Marry had a little lamb."
 puts "Its fleece was white as #{'snow'}."
 puts "And everywhere that Mary went."
-puts "FUCKING STUPID"
+puts "Silly EXERCISE"
 puts "." * 10 #This will make 10 dots all on the same line
 
 end1 = "C"

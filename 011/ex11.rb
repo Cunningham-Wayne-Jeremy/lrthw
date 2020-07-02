@@ -11,7 +11,7 @@ age = gets.chomp
  '''
 weight = gets.chomp
  print "Oh wait print cannot use escape sequences maybe? \n No it can.
- But can it call variables? Yes it can: #{age} well I havent a clue then\n"
+ But can it call variables? Yes it can: #{age} but it wont do a new line.\n"
 
  puts "So, you're #{age} old, #{height} tall and #{weight} heavy."
 
